@@ -9,8 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Image("paris")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 300)
+            .cornerRadius(10)
+            .overlay(
+                Color.black
+                    .cornerRadius(10)
+                    .opacity(0.4)
+                    .overlay(
+                        Text("Paris")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .foregroundColor(.white)
+                    )
+            )
     }
 }
 
